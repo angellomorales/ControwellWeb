@@ -1,0 +1,85 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = ControWell.Client
+build_property.RootNamespace = ControWell.Client
+build_property.ProjectDir = C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/AforoTKList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWZvcm9US0xpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Hero.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGVyby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/PozoList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG96b0xpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/PozoServiceList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG96b1NlcnZpY2VMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/SinglePozo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ2xlUG96by5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/SuperHeroes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VwZXJIZXJvZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/TanquesList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFucXVlc0xpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/UsuarioDetalle.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb0RldGFsbGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/UsuarioList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb0xpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-fx0juhdfvs
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-xjecy8nknt

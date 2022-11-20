@@ -1,0 +1,81 @@
+﻿@page "/pozoedit"
+@page "/pozoedit/{id:int}"
+@inject IPozoService PozoService
+<h3>Well update</h3>
+
+@if (Id==null)
+{
+    <PageTitle>Añadir un nuevo pozo</PageTitle>
+    <h3>Añadir un nuevo pozo</h3>
+}
+else
+{
+    <PageTitle>Edit @pozo.Comentario</PageTitle>
+    <h3>Edit @pozo.NombrePozo</h3>
+}
+
+<EditForm Model="pozo" OnSubmit="EnviarPozo">
+    <div>
+        <label for="nombrepozo">Nombre Pozo</label>
+        <InputText id="nombrepozo" @bind-Value="pozo.NombrePozo" class="form-control"></InputText>
+    </div>
+    <div>
+        <label for="ubicacion">Ubicacion</label>
+        <InputText id="ubicacion" @bind-Value="pozo.Ubicacion" class="form-control"></InputText>
+    </div>
+    <div>
+        <label for="ubicacion">Operadora</label>
+        <InputText id="ubicacion" @bind-Value="pozo.Operadora" class="form-control"></InputText>
+    </div>
+    <div>
+        <label for="ubicacion">Comentario</label>
+        <InputText id="ubicacion" @bind-Value="pozo.Comentario" class="form-control"></InputText>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary" @onclick="EnviarPozo">Actualizar</button>
+    <button type="submit" class="btn btn-danger" @onclick="DeletePozo"> Eliminar</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int? Id{ get; set; }
+
+    string btnText = string.Empty;
+
+    Pozo  pozo= new Pozo();
+
+    protected override async Task OnInitializedAsync()
+    {
+        btnText = Id == null ? "Guardar pozo" : "actualizar pozo";
+        await PozoService.GetPozo();
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if(Id==null)
+        {
+            pozo.Id = pozo.Id;
+        }
+        else
+        {
+            pozo = await PozoService.GetSinglePozo((int)Id);
+        }
+    }
+    async Task EnviarPozo()
+    {
+        if(Id==null)
+        {
+            await PozoService.CreatePozo(pozo);
+        }
+        else
+        {
+            await PozoService.UpdatePozo(pozo);
+        }
+    }
+
+    async Task DeletePozo()
+    {
+        await PozoService.DeletePozo(pozo.Id);
+    }
+}
+

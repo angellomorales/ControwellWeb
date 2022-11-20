@@ -1,0 +1,42 @@
+﻿@page "/pozolist"
+@inject IPozoService PozoService
+@using ControWell.Shared
+@using System.Net.Http.Json
+@inject HttpClient Http
+<h3>Administrar Pozos</h3>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre del Pozo</th>
+            <th>Ubicacion</th>
+            <th>Operadora</th>
+            <th>Comentario</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Pozo in Pozos)
+        {
+            <tr>
+                <td>@Pozo.Id</td>
+                <td>@Pozo.NombrePozo</td>
+                <td>@Pozo.Ubicacion</td>
+                <td>@Pozo.Operadora</td>
+                <td>@Pozo.Comentario</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    public static List<Pozo> Pozos = new List<Pozo>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var resultado = await Http.GetFromJsonAsync<List<Pozo>>("api/Pozo");
+        if (resultado != null)
+            Pozos = resultado;
+    }
+}

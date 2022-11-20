@@ -1,0 +1,40 @@
+﻿@page "/tanquelist"
+@using ControWell.Shared
+@using System.Net.Http.Json
+@inject HttpClient Http
+<h3>Administrar Tanques</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre del Tanque</th>
+            <th>Capacidad</th>
+            <th>Tipo de Fluido</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Tanque in Tanques)
+        {
+            <tr>
+                <td>@Tanque.Id</td>
+                <td>@Tanque.NombreTanque</td>
+                <td>@Tanque.Capacidad</td>
+                <td>@Tanque.TipoFluido</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    public static List<Tanque> Tanques = new List<Tanque>();
+    protected override async Task OnInitializedAsync()
+    {
+        var resultado = await Http.GetFromJsonAsync<List<Tanque>>("api/Tanque");
+        if(resultado!=null)
+                Tanques = resultado;
+    }
+
+}
