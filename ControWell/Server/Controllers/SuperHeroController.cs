@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ControWell.Client.Pages;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ControWell.Server.Controllers
@@ -41,6 +42,59 @@ namespace ControWell.Server.Controllers
             }
             
             return Ok(hero);
+        }
+
+        [HttpPost]
+        
+        public async Task<ActionResult<SuperHero>> CreateSuperHero(SuperHero hero)
+        {
+            hero.Comic = null;
+            _context.SuperHeroes.Add(hero);
+            await _context.SaveChangesAsync();
+            return Ok(await GetDbHeroes());
+        }
+
+
+
+
+        [HttpPut]
+
+        public async Task<ActionResult<SuperHero>> UpdateSuperHero(SuperHero hero,int id)
+        {
+            var dbHero=await _context.SuperHeroes
+                .Include(sh=>sh.Comic)
+                .FirstOrDefaultAsync(sh=>sh.Id == id);
+            if (dbHero == null)
+                return NotFound("Sorry, pero el heroe no existe");
+            dbHero.FirstName=hero.FirstName;
+            dbHero.LastName=hero.LastName;
+            dbHero.HeroName=hero.HeroName;
+            dbHero.Comic=hero.Comic;
+
+            await _context.SaveChangesAsync();
+            return Ok(await GetDbHeroes());
+        }
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<ActionResult<List<SuperHero>>> DeleteSuperHero(int id)
+        {
+            var dbHero = await _context.SuperHeroes.
+                Include(h => h.Comic)
+                .FirstOrDefaultAsync(h => h.Id == id);
+            if (dbHero == null)
+            {
+                return NotFound("Lo siento, el heroe no se encuentra :/");
+            }
+
+            _context.SuperHeroes.Remove(dbHero);
+            await _context.SaveChangesAsync();
+
+            return Ok(await GetDbHeroes());
+        }
+
+        private async Task<List<SuperHero>> GetDbHeroes()
+        {
+            return await _context.SuperHeroes.Include(sh => sh.Comic).ToListAsync();
         }
     }
 }
