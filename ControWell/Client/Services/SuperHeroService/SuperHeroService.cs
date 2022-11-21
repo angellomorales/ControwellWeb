@@ -61,7 +61,7 @@ namespace ControWell.Client.Services.SuperHeroService
         public async Task UpdateHero(SuperHero hero)
         {
             var result = await _http.PutAsJsonAsync($"api/SuperHero/{hero.Id}", hero);
-             await SetHeroes(result);
+            await SetHeroes(result);
         }
     }
 }

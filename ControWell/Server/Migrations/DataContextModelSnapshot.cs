@@ -303,6 +303,35 @@ namespace ControWell.Server.Migrations
                         });
                 });
 
+            modelBuilder.Entity("ControWell.Shared.VariableProceso", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Unidad")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("VariableProcesos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Nombre = "Presion Cabeza",
+                            Unidad = "pisa"
+                        });
+                });
+
             modelBuilder.Entity("ControWell.Shared.AforoTK", b =>
                 {
                     b.HasOne("ControWell.Shared.Tanque", "Tanque")

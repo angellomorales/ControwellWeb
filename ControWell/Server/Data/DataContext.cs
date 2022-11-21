@@ -144,6 +144,16 @@
                 ComicId = 2
             }
                );
+            modelBuilder.Entity<VariableProceso>().HasData(
+                
+                new VariableProceso
+                {
+                    Id = 1,
+                    Nombre="Presion Cabeza",
+                    Unidad="psia"
+                }
+
+                );
         }
         public DbSet<Pozo> Pozos { get; set; }
         public DbSet<Tanque> Tanques { get; set; }
@@ -151,6 +161,7 @@
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<SuperHero> SuperHeroes { get; set; }
         public DbSet<Comic> Comics { get; set; }
+        public DbSet<VariableProceso> VariableProcesos { get; set; }
     }
 
     

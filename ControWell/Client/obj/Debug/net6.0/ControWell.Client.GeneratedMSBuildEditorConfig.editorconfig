@@ -20,10 +20,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/AforoTKList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWZvcm9US0xpc3QucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -32,40 +28,56 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Hero.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGVyby5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/PozoList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG96b0xpc3QucmF6b3I=
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Pozo/PozoList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG96b1xQb3pvTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/PozoServiceList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG96b1NlcnZpY2VMaXN0LnJhem9y
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Pozo/PozoServiceList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG96b1xQb3pvU2VydmljZUxpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/SinglePozo.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ2xlUG96by5yYXpvcg==
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Pozo/SinglePozo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG96b1xTaW5nbGVQb3pvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/SuperHeroes.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VwZXJIZXJvZXMucmF6b3I=
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/SuperHero/Hero.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VwZXJIZXJvXEhlcm8ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/TanquesList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFucXVlc0xpc3QucmF6b3I=
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/SuperHero/SuperHeroes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VwZXJIZXJvXFN1cGVySGVyb2VzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/UsuarioDetalle.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb0RldGFsbGUucmF6b3I=
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Tanque/AforoTKList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFucXVlXEFmb3JvVEtMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/UsuarioList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb0xpc3QucmF6b3I=
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Tanque/TanquesList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFucXVlXFRhbnF1ZXNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Usuario/UsuarioDetalle.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb1xVc3VhcmlvRGV0YWxsZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Usuario/UsuarioList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb1xVc3VhcmlvTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/VariableProceso/CrearVariableProceso.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmFyaWFibGVQcm9jZXNvXENyZWFyVmFyaWFibGVQcm9jZXNvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/VariableProceso/SingleVariableProceso.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmFyaWFibGVQcm9jZXNvXFNpbmdsZVZhcmlhYmxlUHJvY2Vzby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/VariableProceso/VariableProcesoList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmFyaWFibGVQcm9jZXNvXFZhcmlhYmxlUHJvY2Vzb0xpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Shared/SurveyPrompt.razor]
