@@ -7,40 +7,24 @@ namespace ControWell.Server.Controllers
     [ApiController]
     public class SuperHeroController : ControllerBase
     {
-        public static List<Comic> comics= new List<Comic>
+        private readonly DataContext _context;
+
+        public SuperHeroController(DataContext context)
         {
-            new Comic{Id=1,Name="Marvel"},
-            new Comic{Id=2,Name="DC"}
-        };
-        public static List<SuperHero> heroes = new List<SuperHero>
-        {
-            new SuperHero
-            {
-                Id=1,
-                FirstName="Peter",
-                LastName="Parker",
-                HeroName="Spiderman",
-                Comic=comics[0],
-                ComicId=1
-            },
-            new SuperHero
-            {
-                Id=2,
-                FirstName="Bruce",
-                LastName="Wayne",
-                HeroName="Batman",
-                Comic=comics[1],
-                ComicId=2
-            },
-        };
+            _context = context;
+        }
+
+
         [HttpGet]
         public async Task<ActionResult<List<SuperHero>>> GetSuperHeroes()
         {
+            var heroes =await _context.SuperHeroes.Include(sh=>sh.Comic).ToListAsync();
             return Ok(heroes);
         }
         [HttpGet("Comics")]
         public async Task<ActionResult<List<Comic>>> GetComics()
         {
+            var comics = await _context.Comics.ToArrayAsync();
             return Ok(comics);
         }
 
@@ -48,7 +32,9 @@ namespace ControWell.Server.Controllers
         [Route("{id}")]
         public async Task<ActionResult<List<SuperHero>>> GetSingleHeroes(int id)
         {
-            var hero =heroes.FirstOrDefault(h => h.Id == id);
+            var hero = await _context.SuperHeroes.
+                Include(h=>h.Comic)
+                .FirstOrDefaultAsync(h => h.Id == id);
             if(hero == null)
             {
                 return NotFound("Lo siento, el heroe no se encuentra :/");
