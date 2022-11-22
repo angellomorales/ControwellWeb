@@ -3,6 +3,7 @@ using ControWell.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControWell.Server.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20221122021444_MigraciondePrueba")]
+    partial class MigraciondePrueba
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,49 +62,6 @@ namespace ControWell.Server.Migrations
                             TanqueId = 2,
                             TempBase = 120,
                             Volunen = 1000
-                        });
-                });
-
-            modelBuilder.Entity("ControWell.Shared.Alarma", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("Habilitado")
-                        .HasColumnType("int");
-
-                    b.Property<float>("Max")
-                        .HasColumnType("real");
-
-                    b.Property<float>("Min")
-                        .HasColumnType("real");
-
-                    b.Property<int>("PozoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("VariableProcesoId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PozoId");
-
-                    b.HasIndex("VariableProcesoId");
-
-                    b.ToTable("Alarmas");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Habilitado = 0,
-                            Max = 500f,
-                            Min = 30f,
-                            PozoId = 1,
-                            VariableProcesoId = 2
                         });
                 });
 
@@ -408,25 +367,6 @@ namespace ControWell.Server.Migrations
                         .IsRequired();
 
                     b.Navigation("Tanque");
-                });
-
-            modelBuilder.Entity("ControWell.Shared.Alarma", b =>
-                {
-                    b.HasOne("ControWell.Shared.Pozo", "Pozo")
-                        .WithMany()
-                        .HasForeignKey("PozoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ControWell.Shared.VariableProceso", "VariableProceso")
-                        .WithMany()
-                        .HasForeignKey("VariableProcesoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Pozo");
-
-                    b.Navigation("VariableProceso");
                 });
 
             modelBuilder.Entity("ControWell.Shared.SuperHero", b =>

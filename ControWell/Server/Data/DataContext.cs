@@ -154,6 +154,25 @@
                 }
 
                 );
+
+            modelBuilder.Entity<Prueba>().HasData(
+                new Prueba
+                {
+                    Id = 1,
+                    Nombre="Autorizado"
+                }
+                
+                );
+            modelBuilder.Entity<Alarma>().HasData(
+                new Alarma
+                {
+                    Id = 1,
+                    PozoId= 1,
+                    VariableProcesoId= 2,
+                    Max=500,
+                    Min=30,
+                }
+                );
         }
         public DbSet<Pozo> Pozos { get; set; }
         public DbSet<Tanque> Tanques { get; set; }
@@ -162,6 +181,8 @@
         public DbSet<SuperHero> SuperHeroes { get; set; }
         public DbSet<Comic> Comics { get; set; }
         public DbSet<VariableProceso> VariableProcesos { get; set; }
+        public DbSet<Prueba> Pruebas { get; set; }
+        public DbSet<Alarma> Alarmas { get; set; }
     }
 
     
