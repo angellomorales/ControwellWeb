@@ -173,6 +173,16 @@
                     Min=30,
                 }
                 );
+            modelBuilder.Entity<Registro>().HasData(
+                new Registro
+                {
+                    Id= 1,
+                    
+                    PozoId = 1,
+                    VariableProcesoId= 2,
+                    Medida= 45
+                }
+                );
         }
         public DbSet<Pozo> Pozos { get; set; }
         public DbSet<Tanque> Tanques { get; set; }
@@ -183,6 +193,7 @@
         public DbSet<VariableProceso> VariableProcesos { get; set; }
         public DbSet<Prueba> Pruebas { get; set; }
         public DbSet<Alarma> Alarmas { get; set; }
+        public DbSet<Registro> Registros { get; set; }
     }
 
     

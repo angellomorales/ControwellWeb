@@ -18,8 +18,8 @@ namespace ControWell.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<VariableProceso>>> GetVariableProceso()
         {
-            var procesos = await _context.VariableProcesos.ToListAsync();
-            return Ok(procesos);
+            var variable = await _context.VariableProcesos.ToListAsync();
+            return Ok(variable);
         }
 
 
@@ -27,23 +27,39 @@ namespace ControWell.Server.Controllers
         [Route("{id}")]
         public async Task<ActionResult<List<VariableProceso>>> GetSingleVariableProceso(int id)
         {
-            var proceso = await _context.VariableProcesos.FirstOrDefaultAsync(v => v.Id == id);
-            if (proceso == null)
+            var variable = await _context.VariableProcesos.FirstOrDefaultAsync(v => v.Id == id);
+            if (variable == null)
             {
                 return NotFound("La variable de proceso no ha sido creada :/");
             }
 
-            return Ok(proceso);
+            return Ok(variable);
         }
 
         [HttpPost]
 
-        public async Task<ActionResult<VariableProceso>> CreateSuperHero(VariableProceso variable)
+        public async Task<ActionResult<VariableProceso>> CreateVariableProceso(VariableProceso variable)
         {
             
             _context.VariableProcesos.Add(variable);
             await _context.SaveChangesAsync();
             return Ok(await GetDbVariableProceso());
+        }
+
+
+        public async Task<ActionResult<List<VariableProceso>>> UpdateVariableProceso(VariableProceso variable)
+        {
+
+            var DbVariable = await _context.VariableProcesos.FindAsync(variable.Id);
+            if(DbVariable==null)
+                      return  BadRequest("La variable no se encuentra");
+            DbVariable.Nombre = variable.Nombre;
+            DbVariable.Unidad= variable.Unidad;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(await _context.VariableProcesos.ToListAsync());
+            
         }
 
 

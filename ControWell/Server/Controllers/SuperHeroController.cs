@@ -59,17 +59,17 @@ namespace ControWell.Server.Controllers
 
         [HttpPut]
 
-        public async Task<ActionResult<SuperHero>> UpdateSuperHero(SuperHero hero,int id)
+        public async Task<ActionResult<List<SuperHero>>> UpdateSuperHero(SuperHero request)
         {
             var dbHero=await _context.SuperHeroes
                 .Include(sh=>sh.Comic)
-                .FirstOrDefaultAsync(sh=>sh.Id == id);
+                .FirstOrDefaultAsync(sh=>sh.Id == request.Id);
             if (dbHero == null)
                 return NotFound("Sorry, pero el heroe no existe");
-            dbHero.FirstName=hero.FirstName;
-            dbHero.LastName=hero.LastName;
-            dbHero.HeroName=hero.HeroName;
-            dbHero.Comic=hero.Comic;
+            dbHero.FirstName=request.FirstName;
+            dbHero.LastName=request.LastName;
+            dbHero.HeroName=request.HeroName;
+            dbHero.Comic=request.Comic;
 
             await _context.SaveChangesAsync();
             return Ok(await GetDbHeroes());
