@@ -3,12 +3,14 @@ global using System.Net.Http.Json;
 global using ControWell.Client.Services.PozoService;
 global using ControWell.Client.Services.UsuarioService;
 global using ControWell.Client.Services.SuperHeroService;
+global using ControWell.Client.Services.AlarmaService;
 using ControWell.Client;
 
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using ControWell.Client.Services.SuperHeroService;
 using ControWell.Client.Services.VariableProcesoService;
+using ControWell.Client.Services.AlarmaService;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -18,5 +20,6 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddScoped<IPozoService, PozoService>();
 builder.Services.AddScoped<ISuperHeroService, SuperHeroService>();
 builder.Services.AddScoped<IVariableProcesoService, VariableProcesoService>();
+builder.Services.AddScoped<IAlarmaService, AlarmaService>();
 
 await builder.Build().RunAsync();

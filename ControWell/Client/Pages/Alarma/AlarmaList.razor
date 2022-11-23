@@ -1,0 +1,61 @@
+﻿@page "/alarmalist"
+@inject IAlarmaService AlarmarSerice
+@inject HttpClient Http
+@inject NavigationManager NanigationManager
+@using ControWell.Client.Services.AlarmaService;
+@using ControWell.Shared
+@using System.Net.Http.Json
+
+<h3>Listado de Alarmas</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Pozos</th>
+            <th>Variable</th>
+            <th>Max</th>
+            <th>Min</th>
+            <th>Habilitada</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Alarma in Alarmas)
+        {
+                                <tr>
+                                    <td>@Alarma.Id</td>
+                                    <td>@Alarma.Pozo.NombrePozo</td>
+                                    <td>@Alarma.VariableProceso.Nombre</td>
+                                    <td>@Alarma.Max</td>
+                                    <td>@Alarma.Min</td>
+                                    <td>@Alarma.Habilitado</td>
+                                    <td>
+                                        <button class="btn btn-primary" ><i class="oi oi-pencil"></i></button>
+                                    </td>
+
+                                </tr>
+        }
+    </tbody>
+</table>
+<button class="btn btn-outline-success" @onclick="NevegarVariablesLista">Nueva Variable</button>
+@code {
+    public static List<Alarma> Alarmas = new List<Alarma>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var resultado = await Http.GetFromJsonAsync<List<Alarma>>("api/Alarma");
+        if (resultado != null)
+            Alarmas = resultado;
+
+    }
+
+
+    void NevegarVariablesLista()
+    {
+        NanigationManager.NavigateTo("/crearvariable");
+    }
+    void MostrarUnaVariable(int id)
+    {
+        NanigationManager.NavigateTo($"singlevariableproceso/{id}");
+    }
+}

@@ -1,0 +1,60 @@
+﻿@page "/registrolist"
+@inject HttpClient Http
+@inject NavigationManager NanigationManager
+@using ControWell.Client.Services.AlarmaService;
+@using ControWell.Shared
+@using System.Net.Http.Json
+
+<h3>Listado de Registros</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Fecha</th>
+            <th>Pozo</th>
+            <th>Variable</th>
+            <th>Medida</th>
+            <th>Unidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Registro in Registros)
+        {
+                                    <tr>
+                                        <td>@Registro.Id</td>
+                                        <td>@Registro.FechaHora</td>
+                                        <td>@Registro.Pozo.NombrePozo</td>
+                                        <td>@Registro.VariableProceso.Nombre</td>
+                                        <td>@Registro.Medida</td>
+                                        <td>@Registro.VariableProceso.Unidad</td>
+                                        <td>
+                                            <button class="btn btn-primary" ><i class="oi oi-pencil"></i></button>
+                                        </td>
+
+                                    </tr>
+        }
+    </tbody>
+</table>
+<button class="btn btn-outline-success" @onclick="NevegarVariablesLista">Nueva Variable</button>
+@code {
+    public static List<Registro> Registros = new List<Registro>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var resultado = await Http.GetFromJsonAsync<List<Registro>>("api/Registro");
+        if (resultado != null)
+            Registros = resultado;
+
+    }
+
+
+    void NevegarVariablesLista()
+    {
+        NanigationManager.NavigateTo("/crearvariable");
+    }
+    void MostrarUnaVariable(int id)
+    {
+        NanigationManager.NavigateTo($"singlevariableproceso/{id}");
+    }
+}
