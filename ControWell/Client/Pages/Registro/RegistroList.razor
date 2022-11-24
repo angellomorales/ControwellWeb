@@ -16,6 +16,7 @@
             <th>Variable</th>
             <th>Medida</th>
             <th>Unidad</th>
+            <th>Maximo Alarma</th>
         </tr>
     </thead>
     <tbody>
@@ -39,6 +40,7 @@
 <button class="btn btn-outline-success" @onclick="NevegarVariablesLista">Nueva Variable</button>
 @code {
     public static List<Registro> Registros = new List<Registro>();
+    public static List<Alarma> Alarmas = new List<Alarma>();
 
     protected override async Task OnInitializedAsync()
     {
@@ -46,7 +48,21 @@
         if (resultado != null)
             Registros = resultado;
 
+
+
+        var resultad = await Http.GetFromJsonAsync<List<Alarma>>("api/Alarma");
+        if (resultad != null)
+            Alarmas = resultad;
+
     }
+
+
+
+    void alarmas()
+    {
+        
+    }
+
 
 
     void NevegarVariablesLista()
