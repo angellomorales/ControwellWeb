@@ -88,6 +88,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmFyaWFibGVQcm9jZXNvXFZhcmlhYmxlUHJvY2Vzb0xpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Shared/Menu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
