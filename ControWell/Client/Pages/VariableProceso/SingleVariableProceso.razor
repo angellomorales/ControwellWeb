@@ -7,7 +7,7 @@
 
 <h3>CrearVariableProceso</h3>
 
-<EditForm Model="variable" OnSubmit="EviarVariable">
+<EditForm Model="variable" OnSubmit="EnviarVariable">
     <div>
         <label for="nombre">Nombre variable</label>
         <InputText id="nombre" @bind-Value="variable.Nombre" class="form-control"></InputText>
@@ -20,7 +20,7 @@
     <br />
 
     <button type="submit" class="btn btn-primary" @onclick="UpdateVariableProceso">Actualizar</button>
-    <button type="submit" class="btn btn-danger" @onclick="DeleteVariableProceso">Eliminar</button>
+    <button type="button" class="btn btn-danger" @onclick="DeleteVariableProceso">Eliminar</button>
     <button class="btn btn-outline-warning" @onclick="VolverAnterior">Volver</button>
 </EditForm>
 
@@ -33,7 +33,7 @@
     VariableProceso variable = new VariableProceso();
 
 
-    async Task EviarVariable()
+    async Task EnviarVariable()
     {
         await VariableProcesoService.UpdateVariableProceso(variable);
 

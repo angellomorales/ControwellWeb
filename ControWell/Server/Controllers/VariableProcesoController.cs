@@ -46,7 +46,7 @@ namespace ControWell.Server.Controllers
             return Ok(await GetDbVariableProceso());
         }
 
-
+        [HttpPut]
         public async Task<ActionResult<List<VariableProceso>>> UpdateVariableProceso(VariableProceso variable)
         {
 
@@ -60,6 +60,7 @@ namespace ControWell.Server.Controllers
 
             return Ok(await _context.VariableProcesos.ToListAsync());
             
+
         }
 
 

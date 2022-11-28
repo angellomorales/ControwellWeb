@@ -50,5 +50,6 @@ namespace ControWell.Client.Services.VariableProcesoService
             var result = await _http.PutAsJsonAsync($"api/VariableProceso/{variable.Id}", variable);
             await SetVariable(result);
         }
+
     }
 }
