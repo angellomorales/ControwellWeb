@@ -1,81 +1,73 @@
-﻿@page "/pozoedit"
-@page "/pozoedit/{id:int}"
+﻿@page "/singlepozo"
+@page "/singlepozo/{id:int}"
+@using ControWell.Client.Services.PozoService;
 @inject IPozoService PozoService
-<h3>Well update</h3>
+@inject HttpClient Http
+@inject NavigationManager NanigationManager
 
-@if (Id==null)
-{
-    <PageTitle>Añadir un nuevo pozo</PageTitle>
-    <h3>Añadir un nuevo pozo</h3>
-}
-else
-{
-    <PageTitle>Edit @pozo.Comentario</PageTitle>
-    <h3>Edit @pozo.NombrePozo</h3>
-}
+<h3>CrearPozo</h3>
 
-<EditForm Model="pozo" OnSubmit="EnviarPozo">
+<EditForm Model="pozo" OnSubmit="EnviarVariable">
     <div>
-        <label for="nombrepozo">Nombre Pozo</label>
-        <InputText id="nombrepozo" @bind-Value="pozo.NombrePozo" class="form-control"></InputText>
+        <label for="nombre">Nombre pozo</label>
+        <InputText id="nombre" @bind-Value="pozo.NombrePozo" class="form-control"></InputText>
     </div>
     <div>
-        <label for="ubicacion">Ubicacion</label>
-        <InputText id="ubicacion" @bind-Value="pozo.Ubicacion" class="form-control"></InputText>
+        <label for="lastname">Unidad de medida</label>
+        <InputText id="lastname" @bind-Value="pozo.Operadora" class="form-control"></InputText>
     </div>
     <div>
-        <label for="ubicacion">Operadora</label>
-        <InputText id="ubicacion" @bind-Value="pozo.Operadora" class="form-control"></InputText>
+        <label for="lastname">Unidad de medida</label>
+        <InputText id="lastname" @bind-Value="pozo.Ubicacion" class="form-control"></InputText>
     </div>
     <div>
-        <label for="ubicacion">Comentario</label>
-        <InputText id="ubicacion" @bind-Value="pozo.Comentario" class="form-control"></InputText>
+        <label for="lastname">Unidad de medida</label>
+        <InputText id="lastname" @bind-Value="pozo.Comentario" class="form-control"></InputText>
     </div>
+
     <br />
-    <button type="submit" class="btn btn-primary" @onclick="EnviarPozo">Actualizar</button>
-    <button type="submit" class="btn btn-danger" @onclick="DeletePozo"> Eliminar</button>
+
+    <button type="button" class="btn btn-primary" @onclick="UpdatePozo">Actualizar</button>
+    <button type="button" class="btn btn-danger" @onclick="DeletePozo">Eliminar</button>
+    <button class="btn btn-outline-warning" @onclick="VolverAnterior">Volver</button>
 </EditForm>
+
 
 @code {
     [Parameter]
-    public int? Id{ get; set; }
 
-    string btnText = string.Empty;
+    public int? Id { get; set; }
 
-    Pozo  pozo= new Pozo();
+    Pozo pozo = new Pozo();
 
-    protected override async Task OnInitializedAsync()
+
+    async Task EnviarVariable()
     {
-        btnText = Id == null ? "Guardar pozo" : "actualizar pozo";
-        await PozoService.GetPozo();
+        await PozoService.UpdatePozo(pozo);
+
     }
+
+    void VolverAnterior()
+    {
+        NanigationManager.NavigateTo("/Pozolist");
+    }
+
 
     protected override async Task OnParametersSetAsync()
     {
-        if(Id==null)
-        {
-            pozo.Id = pozo.Id;
-        }
-        else
-        {
-            pozo = await PozoService.GetSinglePozo((int)Id);
-        }
-    }
-    async Task EnviarPozo()
-    {
-        if(Id==null)
-        {
-            await PozoService.CreatePozo(pozo);
-        }
-        else
-        {
-            await PozoService.UpdatePozo(pozo);
-        }
+
+        pozo = await PozoService.GetSinglePozo((int)Id);
     }
 
     async Task DeletePozo()
     {
         await PozoService.DeletePozo(pozo.Id);
     }
-}
 
+    async Task UpdatePozo()
+    {
+        await PozoService.UpdatePozo(pozo);
+    }
+
+
+}

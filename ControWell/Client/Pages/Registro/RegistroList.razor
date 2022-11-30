@@ -1,4 +1,4 @@
-﻿@page "/registrolist"
+﻿@page "/registroList"
 @inject HttpClient Http
 @inject NavigationManager NanigationManager
 @using ControWell.Client.Services.AlarmaService;
@@ -37,7 +37,7 @@
         }
     </tbody>
 </table>
-<button class="btn btn-outline-success" @onclick="NevegarVariablesLista">Nueva Variable</button>
+<button class="btn btn-outline-success" @onclick="NevegarVariablesLista">Nuevo Pozo</button>
 @code {
     public static List<Registro> Registros = new List<Registro>();
     public static List<Alarma> Alarmas = new List<Alarma>();

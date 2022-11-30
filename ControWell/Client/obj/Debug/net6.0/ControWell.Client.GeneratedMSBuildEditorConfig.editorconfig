@@ -24,6 +24,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWxhcm1hXEFsYXJtYUxpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Alarma/CrearAlarma.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWxhcm1hXENyZWFyQWxhcm1hLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Alarma/SingleAlarma.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWxhcm1hXFNpbmdsZUFsYXJtYS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,12 +44,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Pozo/PozoList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG96b1xQb3pvTGlzdC5yYXpvcg==
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Pozo/CrearPozo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG96b1xDcmVhclBvem8ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Pozo/PozoServiceList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG96b1xQb3pvU2VydmljZUxpc3QucmF6b3I=
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Pozo/PozoList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG96b1xQb3pvTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Pozo/SinglePozo.razor]

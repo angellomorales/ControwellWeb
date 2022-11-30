@@ -1,0 +1,88 @@
+﻿@page "/singlealarma"
+@page "/singlealarma/{id:int}"
+@using ControWell.Client.Services.AlarmaService;
+@using ControWell.Client.Services.PozoService;
+@using ControWell.Client.Services.VariableProcesoService;
+@inject IAlarmaService AlarmaService
+@inject IPozoService PozoService
+@inject IVariableProcesoService VariableProcesoService
+@inject HttpClient Http
+@inject NavigationManager NanigationManager
+
+<h3>CrearAlarma</h3>
+
+<EditForm Model="alarma" OnSubmit="EnviarAlarma">
+     <div>
+        <label for="">Pozo</label>
+        <InputText id="max" @bind-Value="alarma.Pozo.NombrePozo" class="form-control"></InputText>
+    </div>
+     <div>
+        <label for="">VariableProceso</label>
+        <InputText id="max" @bind-Value="alarma.VariableProceso.Nombre" class="form-control"></InputText>
+    </div>
+    <div>
+        <label for="">Valor maximo</label>
+        <InputNumber id="max" @bind-Value="alarma.Max" class="form-control"></InputNumber>
+    </div>
+    <div>
+        <label for="">Valor minimo</label>
+        <InputNumber id="max" @bind-Value="alarma.Min" class="form-control"></InputNumber>
+    </div>
+    <div>
+        <label for="">Activa</label>
+         <div class="form-check form-switch">
+            <input class="form-check-input" value="@alarma.Habilitado" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+
+        </div>
+    </div>
+<br />
+
+    <button type="button" class="btn btn-primary" @onclick="UpdateAlarma">Actualizar</button>
+    <button type="button" class="btn btn-danger" @onclick="DeleteAlarma">Eliminar</button>
+    <button class="btn btn-outline-warning" @onclick="VolverAnterior">Volver</button>
+    <br />
+    <br />
+</EditForm>
+
+
+@code {
+    [Parameter]
+
+    public int? Id { get; set; }
+
+    Alarma alarma = new Alarma();
+
+    Pozo pozo = new Pozo();
+
+    VariableProceso variable = new VariableProceso();
+
+    async Task EnviarAlarma()
+    {
+        await AlarmaService.UpdateAlarma(alarma);
+
+    }
+
+    void VolverAnterior()
+    {
+        NanigationManager.NavigateTo("/Alarmalist");
+    }
+
+
+    protected override async Task OnParametersSetAsync()
+    {
+
+        alarma = await AlarmaService.GetSingleAlarma((int)Id);
+    }
+
+    async Task DeleteAlarma()
+    {
+        await AlarmaService.DeleteAlarma(alarma.Id);
+    }
+
+    async Task UpdateAlarma()
+    {
+        await AlarmaService.UpdateAlarma(alarma);
+    }
+
+
+}

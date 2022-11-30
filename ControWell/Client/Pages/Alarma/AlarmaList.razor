@@ -17,6 +17,8 @@
             <th>Max</th>
             <th>Min</th>
             <th>Habilitada</th>
+            <th>Habilitada</th>
+            <th>Edit</th>
         </tr>
     </thead>
     <tbody>
@@ -30,14 +32,20 @@
                                     <td>@Alarma.Min</td>
                                     <td>@Alarma.Habilitado</td>
                                     <td>
-                                        <button class="btn btn-primary" ><i class="oi oi-pencil"></i></button>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" value="@Alarma.Habilitado" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                        
+                    </div>
+                                    </td>
+                                    <td>
+                    <button class="btn btn-primary" @onclick="()=>MostrarUnaAlarma(Alarma.Id)"><i class="oi oi-pencil"></i></button>
                                     </td>
 
                                 </tr>
         }
     </tbody>
 </table>
-<button class="btn btn-outline-success" @onclick="NevegarVariablesLista">Nueva Variable</button>
+<button class="btn btn-outline-success" @onclick="NevegarVariablesLista">Ajustar Nueva Alarma</button>
 @code {
     public static List<Alarma> Alarmas = new List<Alarma>();
 
@@ -52,10 +60,10 @@
 
     void NevegarVariablesLista()
     {
-        NanigationManager.NavigateTo("/crearvariable");
+        NanigationManager.NavigateTo("/crearalarma");
     }
-    void MostrarUnaVariable(int id)
+    void MostrarUnaAlarma(int id)
     {
-        NanigationManager.NavigateTo($"singlevariableproceso/{id}");
+        NanigationManager.NavigateTo($"singlealarma/{id}");
     }
 }
