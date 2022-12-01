@@ -197,14 +197,14 @@
       "netstandard.dll": "sha256-yWufW5W4SSfjocBcWTEDqnFwTd\/VYtLMc2Y9mPmlggc=",
       "System.Private.CoreLib.dll": "sha256-H009wzPwRoDZlwvpN4KLCsUwN7Y1AmjKB3PIEHA7ObQ=",
       "ControWell.Shared.dll": "sha256-sLdbco7CsI4mrmgAzTukrGT7I8tKjPDyjbSvhUyv6sA=",
-      "ControWell.Client.dll": "sha256-b30pPbBXRI+uJi+NXbYGty5ZcBRikuJsEpGEVLZ8ZUQ="
+      "ControWell.Client.dll": "sha256-7nHwPFEEYa19SmDyWMtIxaAc0IfWIl4VHKfaTeLIFzI="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "ControWell.Shared.pdb": "sha256-lqzTAigGgPg29AxqXDbONGFFN+pmOUM81Xvraol7IXM=",
-      "ControWell.Client.pdb": "sha256-OFriGm09d+7rDG9hFqE8Bfn4NHAhFIbD\/K2Plt0UswA="
+      "ControWell.Client.pdb": "sha256-EhNY3OuSSGOOsxFZYRhbq3DfI1vlVm0e5kiw1XiGq5Q="
     },
     "runtime": {
       "dotnet.6.0.11.h8aoq2305r.js": "sha256-F30V+6jU3jwJYFZoLuwMAqzTiOXu6q7zGgOdjYBofDI=",

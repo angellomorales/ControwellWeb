@@ -17,8 +17,7 @@
             <th>Max</th>
             <th>Min</th>
             <th>U</th>
-            <th>Habilitada</th>
-            <th>Habilitada</th>
+            <th>Habilitada</th>            
             <th>Edit</th>
         </tr>
     </thead>
@@ -31,11 +30,16 @@
                                     <td>@Alarma.VariableProceso.Nombre</td>
                                     <td>@Alarma.Max</td>
                                     <td>@Alarma.Min</td>
-                                    <td>@Alarma.VariableProceso.Unidad</td>
-                                    <td>@Alarma.Habilitado</td>
+                                    <td>@Alarma.VariableProceso.Unidad</td>                                    
                                     <td>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" value="@Alarma.Habilitado" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                        @if(Alarma.Habilitado==1){
+                                <input class="form-check-input" value="@Alarma.Habilitado" type="checkbox" role="checkbox" id="flexSwitchCheckChecked" checked>
+                        }
+                        else{
+                                 <input class="form-check-input" value="@Alarma.Habilitado" type="checkbox" role="checkbox" id="flexSwitchCheckChecked" unchecked>
+                        }
+                        
                         
                     </div>
                                     </td>

@@ -16,7 +16,8 @@
             <th>Variable</th>
             <th>Medida</th>
             <th>Unidad</th>
-            <th>Maximo Alarma</th>
+            <th>Alerta</th>
+            <th>Editar</th>
         </tr>
     </thead>
     <tbody>
@@ -28,6 +29,7 @@
                                         <td>@Registro.Pozo.NombrePozo</td>
                                         <td>@Registro.VariableProceso.Nombre</td>
                                         <td>@Registro.Medida</td>
+                                        <td>@Registro.VariableProceso.Unidad</td>
                                         <td>@Registro.VariableProceso.Unidad</td>
                                         <td>
                     <button class="btn btn-primary" @onclick="()=>MostrarUnRegistro(Registro.Id)"><i class="oi oi-pencil"></i></button>
