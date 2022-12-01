@@ -25,7 +25,7 @@
   <InputSelect @bind-Value="alarma.VariableProcesoId" class="form-select">
             @foreach(var variableProceso in Variables)
             {
-                <option value="@variableProceso.Id">@variableProceso.Nombre</option>
+                <option value="@variableProceso.Id">@variableProceso.Nombre en @variableProceso.Unidad</option>
             }
 
    </InputSelect>

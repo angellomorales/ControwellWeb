@@ -13,12 +13,26 @@
 
 <EditForm Model="alarma" OnSubmit="EnviarAlarma">
      <div>
-        <label for="">Pozo</label>
-        <InputText id="max" @bind-Value="alarma.Pozo.NombrePozo" class="form-control"></InputText>
+        <label for="">Pozo</label>       
+        <InputSelect @bind-Value="alarma.PozoId" class="form-select">
+            @foreach (var pozo in Pozos)
+            {
+                <option value="@pozo.Id">@pozo.NombrePozo</option>
+            }
+
+        </InputSelect>
+
+
     </div>
      <div>
         <label for="">VariableProceso</label>
-        <InputText id="max" @bind-Value="alarma.VariableProceso.Nombre" class="form-control"></InputText>
+         <InputSelect @bind-Value="alarma.VariableProcesoId" class="form-select">
+            @foreach(var variableProceso in Variables)
+            {
+                <option value="@variableProceso.Id">@variableProceso.Nombre en @variableProceso.Unidad</option>
+            }
+
+   </InputSelect>
     </div>
     <div>
         <label for="">Valor maximo</label>
@@ -56,6 +70,24 @@
 
     VariableProceso variable = new VariableProceso();
 
+
+    public static List<VariableProceso> Variables = new List<VariableProceso>();
+
+    public static List<Pozo> Pozos = new List<Pozo>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var resultado = await Http.GetFromJsonAsync<List<VariableProceso>>("api/VariableProceso");
+        if (resultado != null)
+            Variables = resultado;
+
+
+        var resultad = await Http.GetFromJsonAsync<List<Pozo>>("api/Pozo");
+        if (resultad != null)
+            Pozos = resultad;
+    }
+
+
     async Task EnviarAlarma()
     {
         await AlarmaService.UpdateAlarma(alarma);
@@ -64,7 +96,7 @@
 
     void VolverAnterior()
     {
-        NanigationManager.NavigateTo("/Alarmalist");
+        NanigationManager.NavigateTo("/alarmalist");
     }
 
 

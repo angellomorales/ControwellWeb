@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using ControWell.Client.Services.SuperHeroService;
 using ControWell.Client.Services.VariableProcesoService;
 using ControWell.Client.Services.AlarmaService;
+using ControWell.Client.Services.RegistroService;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -21,5 +22,6 @@ builder.Services.AddScoped<IPozoService, PozoService>();
 builder.Services.AddScoped<ISuperHeroService, SuperHeroService>();
 builder.Services.AddScoped<IVariableProcesoService, VariableProcesoService>();
 builder.Services.AddScoped<IAlarmaService, AlarmaService>();
+builder.Services.AddScoped<IRegistroService, RegistroService>();
 
 await builder.Build().RunAsync();
