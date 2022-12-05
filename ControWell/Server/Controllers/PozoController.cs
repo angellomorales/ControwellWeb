@@ -48,7 +48,7 @@ namespace ControWell.Server.Controllers
             return Ok(await GetDbPozo());
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<ActionResult<List<Pozo>>> UpdatePozo(Pozo pozo)
         {
 

@@ -83,7 +83,7 @@ namespace ControWell.Server.Controllers
         }
 
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<ActionResult<List<Alarma>>> UpdateRegistro(Registro registro)
         {
 

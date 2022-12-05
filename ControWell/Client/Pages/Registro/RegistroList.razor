@@ -30,7 +30,27 @@
                                         <td>@Registro.VariableProceso.Nombre</td>
                                         <td>@Registro.Medida</td>
                                         <td>@Registro.VariableProceso.Unidad</td>
-                                        <td>@Registro.VariableProceso.Unidad</td>
+                                        <td>
+                                            <div class="form-check form-switch">
+                                                       @foreach(var alarma in Alarmas)
+                    {
+                        @if (alarma.PozoId == Registro.PozoId)
+                        {
+                            if(Registro.Medida>=alarma.Max)
+                                {
+                                    <input class="form-check-input" value="" type="checkbox" role="checkbox" id="flexSwitchCheckChecked" checked>
+                                }
+                                else
+                                {
+                                    <input class="form-check-input" value="" type="checkbox" role="checkbox" id="flexSwitchCheckChecked" unchecked>
+                                }
+                            }
+
+                    }
+
+                                            </div>
+                                     
+                </td>
                                         <td>
                     <button class="btn btn-primary" @onclick="()=>MostrarUnRegistro(Registro.Id)"><i class="oi oi-pencil"></i></button>
                                         </td>
@@ -43,13 +63,20 @@
 @code {
     public static List<Registro> Registros = new List<Registro>();
     
+    /*Esta es la lista para traaer valores de alarmas aqui*/
+
+    public static List<Alarma> Alarmas = new List<Alarma>();
 
     protected override async Task OnInitializedAsync()
     {
-        var resultado = await Http.GetFromJsonAsync<List<Registro>>("api/Registro");
-        if (resultado != null)
-            Registros = resultado;
+        var resultadoRegistro = await Http.GetFromJsonAsync<List<Registro>>("api/Registro");
+        if (resultadoRegistro != null)
+            Registros = resultadoRegistro;
  
+        /*Traer los valores de alarma aqui*/
+        var resultadoAlarma = await Http.GetFromJsonAsync<List<Alarma>>("api/Alarma");
+        if (resultadoAlarma != null)
+            Alarmas = resultadoAlarma;
 
     }
 
@@ -62,4 +89,8 @@
     {
         NanigationManager.NavigateTo($"singleregistro/{id}");
     }
-}
+
+  
+
+    }
+
