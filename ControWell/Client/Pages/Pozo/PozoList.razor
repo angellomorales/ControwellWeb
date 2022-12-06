@@ -1,0 +1,59 @@
+﻿@page "/pozolist"
+@using ControWell.Client.Services.PozoService;
+@using ControWell.Shared
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject NavigationManager NanigationManager
+@inject IPozoService PozoService
+<h3>Pozos</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Ubicacion</th>
+            <th>Operadora</th>
+            <th>Comentario</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Pozo in Pozos)
+        {
+            <tr>
+                <td>@Pozo.Id</td>
+                <td>@Pozo.NombrePozo</td>
+                <td>@Pozo.Ubicacion</td>
+                <td>@Pozo.Operadora</td>
+                <td>@Pozo.Comentario</td>
+                <td>
+                    <button class="btn btn-primary" @onclick="()=>MostrarUnPozo(Pozo.Id)"><i class="oi oi-pencil"></i></button>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<button class="btn btn-outline-success" @onclick="NevegarVariablesLista">Nuevo Pozo</button>
+<br />
+<br />
+@code {
+    public static List<Pozo> Pozos = new List<Pozo>();
+    protected override async Task OnInitializedAsync()
+    {
+        var resultado = await Http.GetFromJsonAsync<List<Pozo>>("api/Pozo");
+        if (resultado != null)
+            Pozos = resultado;
+    }
+
+
+    void NevegarVariablesLista()
+    {
+        NanigationManager.NavigateTo("/crearpozo");
+    }
+    void MostrarUnPozo(int id)
+    {
+        NanigationManager.NavigateTo($"singlePozo/{id}");
+    }
+}
+

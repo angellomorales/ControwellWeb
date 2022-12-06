@@ -1,0 +1,30 @@
+﻿@page "/aforotklist"
+@using ControWell.Shared
+@using System.Net.Http.Json
+@inject HttpClient Http
+<h3>Lista de Aforos</h3>
+
+
+<ul>
+    @foreach (var AforoTK in AforoTKs)
+   {
+        
+       <li>
+           
+          <a>@AforoTK.Material</a>
+          
+       </li>
+   }
+</ul>
+
+
+
+@code {
+    public static List<AforoTK> AforoTKs = new List<AforoTK>();
+    protected override async Task OnInitializedAsync()
+    {
+        var resultado = await Http.GetFromJsonAsync<List<AforoTK>>("api/AforoTK");
+        if(resultado!=null)
+                AforoTKs = resultado;
+    }
+}
