@@ -27,6 +27,23 @@
         }
 
    </InputSelect>
+
+
+
+    <InputSelect @bind-Value="registro.VariableProcesoId" class="form-select">
+        
+            @foreach(var registro in Registros)
+                        {
+            if (registro.VariableProcesoId !=variable.Id && registro.PozoId!=pozo.Id)
+            {
+                <option value="@registro.VariableProcesoId">@registro.VariableProceso.Nombre</option>
+            }
+        }
+
+
+    </InputSelect>
+
+
     <div>
         <label for="">Fecha</label>
         <InputDate id="fecha" @bind-Value="registro.FechaHora" class="form-control"></InputDate>
@@ -58,17 +75,22 @@
     public static List<VariableProceso> Variables = new List<VariableProceso>();
 
     public static List<Pozo> Pozos = new List<Pozo>();
+    public static List<Registro> Registros = new List<Registro>();
 
     protected override async Task OnInitializedAsync()
     {
-        var resultado = await Http.GetFromJsonAsync<List<VariableProceso>>("api/VariableProceso");
-        if (resultado != null)
-            Variables = resultado;
+        var mivariable = await Http.GetFromJsonAsync<List<VariableProceso>>("api/VariableProceso");
+        if (mivariable != null)
+            Variables = mivariable;
 
 
-        var resultad = await Http.GetFromJsonAsync<List<Pozo>>("api/Pozo");
-        if (resultad != null)
-            Pozos = resultad;
+        var mipozo = await Http.GetFromJsonAsync<List<Pozo>>("api/Pozo");
+        if (mipozo != null)
+            Pozos = mipozo;
+
+        var miregistro = await Http.GetFromJsonAsync<List<Registro>>("api/Registro");
+        if (miregistro != null)
+            Registros = miregistro;
     }
   
 
