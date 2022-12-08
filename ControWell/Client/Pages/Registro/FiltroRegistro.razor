@@ -85,69 +85,6 @@
 
 </EditForm>
 
-<h3>Segun el pozo variables que no tiene registradas</h3>
-
-<EditForm Model="registro" OnSubmit="EnviarRegistro">
-    <label>Pozo</label>
-    <InputSelect @bind-Value="pozo.Id" class="form-select">
-        @foreach (var pozo in Pozos)
-        {
-            <option value="@pozo.Id">@pozo.NombrePozo</option>
-        }
-
-    </InputSelect>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Pozo</th>
-                <th>Variable</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-
-            @foreach(var variable in Variables)
-            {
-                var nom = "hola";
-                foreach(var reg in Registros)
-                {
-                     if (reg.PozoId == pozo.Id)
-                    {
-                        if (!(Registros.Exists(r => r.VariableProcesoId == variable.Id)))
-                        {
-                            nom = variable.Nombre;
-                        }
-                        else
-                        {
-                            nom = "adios";
-                        }
-                    }
-                }
-                if (nom == "hola")
-                {
-                    <tr>
-                        <td>@variable.Nombre</td>
-                        <td></td>
-                    </tr>
-                }
-                else if(nom!="adios")
-                {
-                     <tr>
-                        <td>@nom</td>
-                        <td></td>
-                    </tr>
-                }
-
-                
-            }
-
-           
-        </tbody>
-    </table>
-
-</EditForm>
-
 
 
 
@@ -160,11 +97,13 @@
     VariableProceso variable = new VariableProceso();
 
     Pozo pozo = new Pozo();
+   
 
     public static List<VariableProceso> Variables = new List<VariableProceso>();
 
     public static List<Pozo> Pozos = new List<Pozo>();
     public static List<Registro> Registros = new List<Registro>();
+   
 
     protected override async Task OnInitializedAsync()
     {
@@ -181,7 +120,6 @@
         if (miregistro != null)
             Registros = miregistro;
     }
-
 
 
     async Task EnviarRegistro()
