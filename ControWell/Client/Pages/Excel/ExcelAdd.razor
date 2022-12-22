@@ -33,27 +33,48 @@
         </thead>
         <tbody>
             @foreach (DataRow row in dt.Rows)
-            {
+            {             
                 
                 <tr>
                     @foreach (DataColumn col in dt.Columns)
                     {
-                       
-                                @if (col.ColumnName == "nombre")
-                                {
-                                    row[col.ColumnName] = pozo.NombrePozo;
-                                }
+                        
+                        
+                        var nom = row[col.ColumnName];
+                        nom = nom.ToString();
 
-                                <td>@row[col.ColumnName]</td>
-                                               
-                                                         
+                        if (col.ToString() == "Nombre")
+                        {
+                            pozo.NombrePozo = nom.ToString();
+                            <td>@pozo.NombrePozo</td>
+                        }
+                        if (col.ToString() == "Ubicacion")
+                        {
+                            pozo.Ubicacion = nom.ToString();
+                            <td>@pozo.NombrePozo</td>
+                        }
+                        if (col.ToString() == "Operadora")
+                        {
+                            pozo.Operadora = nom.ToString();
+                            <td>@pozo.NombrePozo</td>
+                        }
+                        if (col.ToString() == "Comentario")
+                        {
+                            pozo.Comentario = nom.ToString();
+                            <td>@pozo.NombrePozo</td>
+                        }
+
+
+
+
                     }
                     @PozoService.CreatePozo(pozo);
+                    
                 </tr>
             }
         </tbody>
     </table>
-       
+
     <button  class="btn btn-primary">Confirmar</button>
    
 </EditForm>
