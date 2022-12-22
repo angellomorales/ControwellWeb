@@ -76,29 +76,18 @@
             </tr>
         </thead>
         <tbody>
-            
-           @foreach(var a in Alarmas)
-        {
-            var c = "conti";
-            if (a.PozoId == pozo.Id)
+
+            @foreach(var v in Variables)
             {
-               
-                
-                    foreach(var v in Variables)
+                miVariables.Add(v);
+                foreach(var a in Alarmas)
+                {
+                    if ((v.Nombre == a.VariableProceso.Nombre) && (pozo.Id == a.PozoId)&&a.Habilitado==1)
                     {
-                        if (v.Nombre != a.VariableProceso.Nombre)
-                        {
-                            <tr>
-                                <td>@v.Nombre</td>
-                                <td></td>
-                            </tr>
-                            
-                        }
-                    }
-                
+                        miVariables.Remove(v);
+                    }                    
+                }
             }
-        }
-    
 
         </tbody>
     </table>

@@ -8,5 +8,6 @@
         Task CreateVariableProceso(VariableProceso variable);
         Task DeleteVariableProceso(int id);
         Task UpdateVariableProceso(VariableProceso variable);
+
     }
 }

@@ -40,6 +40,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Excel/Datos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhjZWxcRGF0b3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Excel/ExcelAdd.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhjZWxcRXhjZWxBZGQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Pozo/SinglePozo.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG96b1xTaW5nbGVQb3pvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Registro/Alerta.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9cQWxlcnRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Registro/CrearRegistro.razor]

@@ -9,19 +9,18 @@
 
 <table class="table">
     <thead>
-        <tr>
+        <tr style="background-color:antiquewhite">
             <th>Id</th>
             <th>Fecha</th>
             <th>Pozo</th>
             <th>Variable</th>
             <th>Medida</th>
             <th>Unidad</th>
-            <th>Alerta</th>
             <th>Editar</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var Registro in Registros)
+         @foreach (var Registro in Registros)
         {
             <tr>
                <td>@Registro.Id</td>
@@ -53,6 +52,7 @@
 
             </tr>
         }
+                                     
     </tbody>
 </table>
 <button class="btn btn-outline-success" @onclick="NevegarRegistroLista">Nuevo Registro</button>

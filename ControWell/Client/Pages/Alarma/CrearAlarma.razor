@@ -38,7 +38,12 @@
         <InputNumber id="max" @bind-Value="alarma.Min" class="form-control"></InputNumber>
     </div>
     <div>
-        
+        <InputSelect @bind-Value=alarma.Habilitado>
+
+            <option value="1">Activar</option>
+            <option value="0">Desactivar</option>
+
+        </InputSelect>
     </div>
 <br />
 
