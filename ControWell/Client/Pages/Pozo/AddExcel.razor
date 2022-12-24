@@ -20,7 +20,8 @@
 
 
     <button class="btn btn-primary" @onclick=procesar>Confirmar</button>
-    <button class="btn btn-secondary" >Ver</button>
+    <button class="btn btn-info">Ver</button>
+<button class="btn btn-warning" @onclick=irpozo>Descartar</button>
      <table class="table">
         <thead> 
             <tr>
@@ -148,5 +149,10 @@
         }
     }
     //Fin de funcion para enviar los datos a la base
+
+    void irpozo()
+    {
+        NanigationManager.NavigateTo("/pozolist");
+    }
 
 }

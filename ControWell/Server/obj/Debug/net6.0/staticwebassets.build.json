@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8e9JPBgl/vlO6656XEwzfBkzoAx1rnWf9YE2rIXepT4=",
+  "Hash": "zMKEflntXDojaHZ3Wku3MpoOuXZaXGbnfx9Bs7R9CG0=",
   "Source": "ControWell.Server",
   "BasePath": "_content/ControWell.Server",
   "Mode": "Default",
@@ -46473,6 +46473,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\wwwroot\\favicon.png",
+      "SourceId": "ControWell.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "favicon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
       "Identity": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\wwwroot\\icon-192.png",
       "SourceId": "ControWell.Client",
       "SourceType": "Project",
@@ -46505,6 +46522,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\wwwroot\\petra.png",
+      "SourceId": "ControWell.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "petra.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\petra.png"
     }
   ]
 }

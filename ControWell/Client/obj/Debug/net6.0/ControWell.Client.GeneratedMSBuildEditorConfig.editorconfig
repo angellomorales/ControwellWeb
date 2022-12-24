@@ -76,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9cQWxlcnRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Registro/ConsultaRegistros.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9cQ29uc3VsdGFSZWdpc3Ryb3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Registro/CrearRegistro.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9cQ3JlYXJSZWdpc3Ryby5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -90,6 +94,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Registro/SingleRegistro.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9cU2luZ2xlUmVnaXN0cm8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/Registro/Uploaddata.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9cVXBsb2FkZGF0YS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dagoberto/source/repos/ControWell/ControWell/Client/Pages/SuperHero/Hero.razor]

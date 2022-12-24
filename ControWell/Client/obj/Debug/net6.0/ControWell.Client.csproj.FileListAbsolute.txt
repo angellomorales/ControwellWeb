@@ -818,7 +818,6 @@ C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client\obj\Debug\net6.0\st
 C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client\obj\Debug\net6.0\scopedcss\bundle\ControWell.Client.styles.css
 C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client\obj\Debug\net6.0\scopedcss\projectbundle\ControWell.Client.bundle.scp.css
 C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client\obj\Debug\net6.0\ControWell.Client.csproj.CopyComplete
@@ -902,3 +901,4 @@ C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client\bin\Debug\net6.0\Sy
 C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client\obj\Debug\net6.0\build-gz\cozbyQEg.gz
 C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client\obj\Debug\net6.0\build-gz\aLSgWZFi.gz
 C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client\obj\Debug\net6.0\build-gz\pwVcrkF1.gz
+C:\Users\Dagoberto\source\repos\ControWell\ControWell\Client\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
