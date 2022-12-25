@@ -120,27 +120,28 @@
 
             foreach (DataColumn col in dt.Columns)
             {
-                var nom = row[col.ColumnName];
-                nom = nom.ToString();
+                var celda = row[col.ColumnName];
+                celda = celda.ToString();
+                var columna = col.ToString();
 
-                if (col.ToString() == "Nombre")
+                if (columna == "Nombre")
                 {
-                    pozo.NombrePozo = nom.ToString();
-
-                }
-                if (col.ToString() == "Ubicacion")
-                {
-                    pozo.Ubicacion = nom.ToString();
+                    pozo.NombrePozo = celda.ToString();
 
                 }
-                if (col.ToString() == "Operadora")
+                if (columna == "Ubicacion")
                 {
-                    pozo.Operadora = nom.ToString();
+                    pozo.Ubicacion = celda.ToString();
 
                 }
-                if (col.ToString() == "Comentario")
+                if (columna == "Operadora")
                 {
-                    pozo.Comentario = nom.ToString();
+                    pozo.Operadora = celda.ToString();
+
+                }
+                if (columna == "Comentario")
+                {
+                    pozo.Comentario = celda.ToString();
 
                 }
 
