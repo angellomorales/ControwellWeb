@@ -84,7 +84,7 @@ namespace ControWell.Server.Controllers
 
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<List<Alarma>>> UpdateRegistro(Registro registro)
+        public async Task<ActionResult<List<Registro>>> UpdateRegistro(Registro registro)
         {
 
             var DbRegistro = await _context.Registros.FindAsync(registro.Id);
@@ -102,11 +102,11 @@ namespace ControWell.Server.Controllers
 
             return Ok(await _context.Registros.ToListAsync());
 
-
-
         }
 
-                
-                
+
+
+
+
     }
 }

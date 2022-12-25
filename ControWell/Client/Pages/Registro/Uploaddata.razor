@@ -140,10 +140,11 @@
                 }
                 foreach(var variable in Variables)
                 {
+
                     if (variable.Nombre == columna)
                     {
                         registro.VariableProcesoId = variable.Id;
-                        registro.Medida = Convert.ToSingle(celda.ToString());
+                        registro.Medida = Convert.ToSingle(celda.ToString());                        
                         RegistroService.CreateRegistro(registro);
                     }
                 } 
@@ -158,14 +159,20 @@
     //Inicio del codigo para obtener todos los pozos y las variables//
     public static List<Pozo> Pozos = new List<Pozo>();
     public static List<VariableProceso> Variables = new List<VariableProceso>();
+    public static List<Registro> Registros = new List<Registro>();
     protected override async Task OnInitializedAsync()
     {
         var mipozo = await Http.GetFromJsonAsync<List<Pozo>>("api/Pozo");
         if (mipozo != null)
             Pozos = mipozo;
+
         var mivariable = await Http.GetFromJsonAsync<List<VariableProceso>>("api/VariableProceso");
         if (mivariable != null)
             Variables = mivariable;
+        
+        var miregistro = await Http.GetFromJsonAsync<List<Registro>>("api/Registro");
+        if (miregistro != null)
+            Registros = miregistro;
     }
     //fin del codigo para obtener los pozos
 
