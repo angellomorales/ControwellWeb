@@ -84,12 +84,12 @@ namespace ControWell.Server.Controllers
 
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<List<Alarma>>> UpdateRegistro(Registro registro)
+        public async Task<ActionResult<List<Registro>>> UpdateRegistro(Registro registro)
         {
 
             var DbRegistro = await _context.Registros.FindAsync(registro.Id);
             if (DbRegistro == null)
-                return BadRequest("La Registro no se encuentra");
+                return BadRequest("El Registro no se encuentra");
             DbRegistro.Id = registro.Id;
             DbRegistro.FechaHora = registro.FechaHora;
             DbRegistro.Pozo = registro.Pozo;
@@ -102,11 +102,11 @@ namespace ControWell.Server.Controllers
 
             return Ok(await _context.Registros.ToListAsync());
 
-
-
         }
 
-                
-                
+
+
+
+
     }
 }
