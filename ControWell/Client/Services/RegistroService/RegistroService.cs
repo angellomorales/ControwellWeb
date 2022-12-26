@@ -54,5 +54,11 @@ namespace ControWell.Client.Services.RegistroService
             var result = await _http.PutAsJsonAsync($"api/Registro/{registro.Id}", registro);
             await SetRegistro(result);
         }
+
+        public async Task UpdateOrCreate(Registro registro)
+        {
+            var result = await _http.PutAsJsonAsync($"api/Registro/{registro.Id}", registro);
+            await SetRegistro(result);
+        }
     }
 }

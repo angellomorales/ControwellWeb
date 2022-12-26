@@ -9173,12 +9173,20 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
       "Id": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\wwwroot\\icon-192.png",
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
       "Id": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\wwwroot\\petra.png",
+      "PackagePath": "staticwebassets\\petra.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ControWell.Client.Microsoft.AspNetCore.StaticWebAssets.props",
