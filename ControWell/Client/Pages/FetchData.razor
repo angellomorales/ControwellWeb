@@ -1,47 +1,91 @@
 ﻿@page "/fetchdata"
 @using ControWell.Shared
+@using System.Data
+@using System.IO
+@using NPOI.XSSF.UserModel
+@using NPOI.SS.UserModel
 @inject HttpClient Http
+@using ControWell.Client.Services.PozoService;
+@inject IPozoService PozoService
+@inject NavigationManager NanigationManager
 
-<PageTitle>Weather forecast</PageTitle>
 
-<h1>Weather forecast</h1>
+
+<h3>Paage</h3>
+<h3>Imp</h3>
+<h1>Import Exel</h1>
+
+<InputFile OnChange="@ImportExcelFile"/>
+
 
 <p>This component demonstrates fetching data from the server.</p>
 
-@if (forecasts == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
+
     <table class="table">
-        <thead>
+        <thead> 
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+            @foreach(DataColumn col in dt.Columns)
+            {
+                <th>@col.ColumnName</th>
+            }                           
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (DataRow row in dt.Rows)
             {
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
+                @foreach(DataColumn col in dt.Columns)
+                {
+                    <td>@row[col.ColumnName] @col.ColumnName</td>
+                }  
+            </tr>
             }
         </tbody>
     </table>
-}
+
+
 
 @code {
-    private WeatherForecast[]? forecasts;
+    DataTable dt = new DataTable();
 
-    protected override async Task OnInitializedAsync()
+    async Task ImportExcelFile(InputFileChangeEventArgs e)
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+        var fileStream = e.File.OpenReadStream();
+        var ms = new MemoryStream();
+        await fileStream.CopyToAsync(ms);
+        fileStream.Close();
+        ms.Position = 0;
+
+        ISheet sheet;
+        var xsswb = new XSSFWorkbook(ms);
+
+        sheet = xsswb.GetSheetAt(0);
+        IRow hr = sheet.GetRow(0);
+        var rl = new List<string>();
+
+        int cc = hr.LastCellNum;
+        for(var j = 0; j < cc; j++)
+        {
+            ICell cell = hr.GetCell(j);
+            dt.Columns.Add(cell.ToString());
+        }
+
+        for(var j = (sheet.FirstRowNum + 1); j <= sheet.LastRowNum; j++)
+        {
+            var r = sheet.GetRow(j);
+            for(var i = r.FirstCellNum; i < cc; i++)
+            {
+                rl.Add(r.GetCell(i).ToString());
+            }
+            if (rl.Count > 0)
+            {
+                dt.Rows.Add(rl.ToArray());
+            }
+            rl.Clear();
+        }
     }
+
+
+
+   
 }

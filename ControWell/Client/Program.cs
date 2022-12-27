@@ -24,4 +24,7 @@ builder.Services.AddScoped<IVariableProcesoService, VariableProcesoService>();
 builder.Services.AddScoped<IAlarmaService, AlarmaService>();
 builder.Services.AddScoped<IRegistroService, RegistroService>();
 
+//Agregado para ver excel
+
+
 await builder.Build().RunAsync();

@@ -30,23 +30,13 @@
 
 
 
-    <InputSelect @bind-Value="registro.VariableProcesoId" class="form-select">
-        
-            @foreach(var registro in Registros)
-                        {
-            if (registro.VariableProcesoId !=variable.Id && registro.PozoId!=pozo.Id)
-            {
-                <option value="@registro.VariableProcesoId">@registro.VariableProceso.Nombre</option>
-            }
-        }
 
-
-    </InputSelect>
 
 
     <div>
         <label for="">Fecha</label>
         <InputDate id="fecha" @bind-Value="registro.FechaHora" class="form-control"></InputDate>
+        
     </div>
     <div>
         <label for="">Medida</label>
@@ -60,6 +50,7 @@
     <br />
     <br />
 </EditForm>
+
 
 
 @code {
@@ -103,6 +94,6 @@
 
     void VolverAnterior()
     {
-        NanigationManager.NavigateTo("/alarmalist");
+        NanigationManager.NavigateTo("/registrolist");
     }
 }

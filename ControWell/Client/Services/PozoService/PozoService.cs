@@ -33,7 +33,7 @@ namespace ControWell.Client.Services.PozoService
             var result = await _http.GetFromJsonAsync<Pozo>($"api/Pozo/{id}");
             if (result != null)
                 return result;
-            throw new Exception("pozo no encontrada");
+            throw new Exception("pozo no encontrado");
         }
 
 

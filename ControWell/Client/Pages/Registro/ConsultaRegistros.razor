@@ -1,0 +1,98 @@
+﻿@page "/consultaregistros"
+@using ControWell.Client.Services.RegistroService;
+@using ControWell.Client.Services.PozoService;
+@using ControWell.Client.Services.VariableProcesoService;
+@inject HttpClient Http
+@inject NavigationManager NanigationManager
+@inject IRegistroService RegistroService
+@using ControWell.Shared
+@using System.Net.Http.Json
+@using System.Linq
+<h3>Consutas</h3>
+<h3>Pozos registrados por variable</h3>
+<EditForm Model="registro" OnSubmit="EnviarRegistro">
+    <label>Pozo</label>
+    <InputSelect @bind-Value="registro.PozoId" class="form-select">
+        @foreach (var pozo in Pozos)
+        {
+            <option value="@pozo.Id">@pozo.NombrePozo</option>
+        }
+
+    </InputSelect>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Fecha y hora</th>                
+                <th>Variable</th>
+                <th>Medida</th>
+                <th>Unidad</th>
+            </tr>
+        </thead>
+        <tbody>
+                @foreach (var r in Registros)
+                    {
+                @if (registro.PozoId == r.PozoId)
+                {
+                    <tr>
+                        <td>@r.FechaHora</td>                        
+                        <td>@r.VariableProceso.Nombre</td>
+                        <td>@r.Medida</td>
+                        <td>@r.VariableProceso.Unidad</td>
+                        
+                    </tr>
+                }
+                
+                    }
+           
+        </tbody>
+    </table>
+
+</EditForm>
+<button>Export as XLXS</button>
+<button>Export as pdf</button>
+@code {
+    [Parameter]
+
+    public int? Id { get; set; }
+
+    Registro registro = new Registro();
+    VariableProceso variable = new VariableProceso();
+
+    Pozo pozo = new Pozo();
+   
+
+    public static List<VariableProceso> Variables = new List<VariableProceso>();
+
+    public static List<Pozo> Pozos = new List<Pozo>();
+    public static List<Registro> Registros = new List<Registro>();
+   
+
+    protected override async Task OnInitializedAsync()
+    {
+        var mivariable = await Http.GetFromJsonAsync<List<VariableProceso>>("api/VariableProceso");
+        if (mivariable != null)
+            Variables = mivariable;
+
+
+        var mipozo = await Http.GetFromJsonAsync<List<Pozo>>("api/Pozo");
+        if (mipozo != null)
+            Pozos = mipozo;
+
+        var miregistro = await Http.GetFromJsonAsync<List<Registro>>("api/Registro");
+        if (miregistro != null)
+            Registros = miregistro;
+    }
+
+
+    async Task EnviarRegistro()
+    {
+        await RegistroService.CreateRegistro(registro);
+
+    }
+
+    void VolverAnterior()
+    {
+        NanigationManager.NavigateTo("/alarmalist");
+    }
+}
