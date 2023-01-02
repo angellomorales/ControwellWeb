@@ -8,6 +8,9 @@
 @using ControWell.Shared
 @using System.Net.Http.Json
 @using System.Linq
+@using SpreadsheetLight;
+@using System.Data;
+@using ClosedXML.Excel;
 <h3>Consutas</h3>
 <h3>Pozos registrados por variable</h3>
 <EditForm Model="registro" OnSubmit="EnviarRegistro">
@@ -48,9 +51,47 @@
         </tbody>
     </table>
 
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h5>Consultar y Exportar</h5>
+                </div>
+        
+                <div class="card-body">
+                    <form>
+                        <div class="form-row align-items-end">
+                            <div class="col-sm-3">
+                                <label class="form-text">Pozo</label>
+                                <select class="form-control">
+                                      @foreach (var pozo in Pozos)
+                                         {
+                                            <option value="@pozo.Id">@pozo.NombrePozo</option>
+                                          }
+                                </select>
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="form-text">Fecha inicio</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="form-text">Fecha fin</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col-sm-3">
+                                <button class="btn btn-success" @onclick=consulta>Export as XLXS</button>
+                                <button class="btn btn-warning">Export as PDF</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </EditForm>
-<button>Export as XLXS</button>
-<button>Export as pdf</button>
+
 @code {
     [Parameter]
 
@@ -60,13 +101,13 @@
     VariableProceso variable = new VariableProceso();
 
     Pozo pozo = new Pozo();
-   
+
 
     public static List<VariableProceso> Variables = new List<VariableProceso>();
 
     public static List<Pozo> Pozos = new List<Pozo>();
     public static List<Registro> Registros = new List<Registro>();
-   
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -91,8 +132,53 @@
 
     }
 
-    void VolverAnterior()
+    //Linq para traer los los registros por pozo y fecha y variable
+    public void consulta()
     {
-        NanigationManager.NavigateTo("/alarmalist");
+        string pathFile = @"C:\Users\Dagoberto\Downloads" + "miExcel.xlsx";
+        SLDocument oSLDocument = new SLDocument();
+        System.Data.DataTable dt = new System.Data.DataTable();
+        //columnas
+        dt.Columns.Add("Id", typeof(string));
+        dt.Columns.Add("Fecha", typeof(string));
+        dt.Columns.Add("Pozo", typeof(string));
+        dt.Columns.Add("Variable", typeof(string));
+        dt.Columns.Add("Medida", typeof(string));
+        dt.Columns.Add("Unidad", typeof(string));
+
+
+        //Registros Row
+        dt.Rows.Add("1", "Noviembre", "ch", "presion", "150", "psi");
+
+        //Matriz
+
+        oSLDocument.ImportDataTable(1, 1, dt, true);
+        oSLDocument.SaveAs(pathFile);
+    }
+
+    public void Export()
+    {
+        DataTable dt = new DataTable();
+        dt.Columns.Add("Nombre");
+        dt.Columns.Add("Telefono");
+        dt.Columns.Add("Edad");
+
+        DataRow dr = dt.NewRow();
+        dr["Nombre"] = "Omar";
+        dr["Telefono"] = "3142970790";
+        dr["Edad"] = "29";
+
+        DataRow dr2 = dt.NewRow();
+        dr2["Nombre"] = "Andres";
+        dr2["Telefono"] = "3142970790";
+        dr2["Edad"] = "26";
+        dt.Rows.Add(dr);
+        dt.Rows.Add(dr2);
+
+        using (XLWorkbook libro=new XLWorkbook())
+        {
+            var hoja = libro.Worksheets.Add(dt);
+            hoja.ColumnsUsed().AdjustToContents();           
+        }
     }
 }

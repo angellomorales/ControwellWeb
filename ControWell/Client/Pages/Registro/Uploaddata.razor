@@ -121,8 +121,8 @@
             {
                 var celda = row[col.ColumnName];
                 var columna = col.ColumnName;
-                columna = columna.ToString()
-    ;
+                columna = columna.ToString();
+
                 if (columna == "Fecha")
                 {
                     registro.FechaHora = Convert.ToDateTime(celda.ToString());
@@ -130,7 +130,7 @@
                 }
                 if (columna == "Pozo")
                 {
-                    foreach(var pozo in Pozos)
+                    foreach (var pozo in Pozos)
                     {
                         if (pozo.NombrePozo == celda.ToString())
                         {
@@ -138,17 +138,17 @@
                         }
                     }
                 }
-                foreach(var variable in Variables)
+                foreach (var variable in Variables)
                 {
 
                     if (variable.Nombre == columna)
                     {
                         registro.VariableProcesoId = variable.Id;
-                        registro.Medida = Convert.ToSingle(celda.ToString());                        
+                        registro.Medida = Convert.ToSingle(celda.ToString());
                         RegistroService.CreateRegistro(registro);
-                    }
-                } 
 
+                    }
+                }
             }
 
         }
