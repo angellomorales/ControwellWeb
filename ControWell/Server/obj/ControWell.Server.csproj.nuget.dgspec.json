@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Server\\ControWell.Server.csproj": {}
+    "C:\\AppPetra\\ControWell\\Server\\ControWell.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\ControWell.Client.csproj": {
+    "C:\\AppPetra\\ControWell\\Client\\ControWell.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\ControWell.Client.csproj",
+        "projectUniqueName": "C:\\AppPetra\\ControWell\\Client\\ControWell.Client.csproj",
         "projectName": "ControWell.Client",
-        "projectPath": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\ControWell.Client.csproj",
+        "projectPath": "C:\\AppPetra\\ControWell\\Client\\ControWell.Client.csproj",
         "packagesPath": "C:\\Users\\Dagoberto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\obj\\",
+        "outputPath": "C:\\AppPetra\\ControWell\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dagoberto\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Shared\\ControWell.Shared.csproj": {
-                "projectPath": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Shared\\ControWell.Shared.csproj"
+              "C:\\AppPetra\\ControWell\\Shared\\ControWell.Shared.csproj": {
+                "projectPath": "C:\\AppPetra\\ControWell\\Shared\\ControWell.Shared.csproj"
               }
             }
           }
@@ -44,6 +44,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.97.0, )"
+            },
+            "CurrieTechnologies.Razor.SweetAlert2": {
+              "target": "Package",
+              "version": "[5.4.0, )"
+            },
             "EPPlus": {
               "target": "Package",
               "version": "[6.1.1, )"
@@ -64,6 +72,10 @@
             "NPOI": {
               "target": "Package",
               "version": "[2.5.4, )"
+            },
+            "SpreadsheetLight": {
+              "target": "Package",
+              "version": "[3.5.0, )"
             }
           },
           "imports": [
@@ -79,8 +91,20 @@
           "warn": true,
           "downloadDependencies": [
             {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[6.0.11, 6.0.11]"
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
             }
           ],
           "frameworkReferences": {
@@ -88,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -97,14 +121,14 @@
         }
       }
     },
-    "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Server\\ControWell.Server.csproj": {
+    "C:\\AppPetra\\ControWell\\Server\\ControWell.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Server\\ControWell.Server.csproj",
+        "projectUniqueName": "C:\\AppPetra\\ControWell\\Server\\ControWell.Server.csproj",
         "projectName": "ControWell.Server",
-        "projectPath": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Server\\ControWell.Server.csproj",
+        "projectPath": "C:\\AppPetra\\ControWell\\Server\\ControWell.Server.csproj",
         "packagesPath": "C:\\Users\\Dagoberto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Server\\obj\\",
+        "outputPath": "C:\\AppPetra\\ControWell\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dagoberto\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -121,11 +145,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\ControWell.Client.csproj": {
-                "projectPath": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Client\\ControWell.Client.csproj"
+              "C:\\AppPetra\\ControWell\\Client\\ControWell.Client.csproj": {
+                "projectPath": "C:\\AppPetra\\ControWell\\Client\\ControWell.Client.csproj"
               },
-              "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Shared\\ControWell.Shared.csproj": {
-                "projectPath": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Shared\\ControWell.Shared.csproj"
+              "C:\\AppPetra\\ControWell\\Shared\\ControWell.Shared.csproj": {
+                "projectPath": "C:\\AppPetra\\ControWell\\Shared\\ControWell.Shared.csproj"
               }
             }
           }
@@ -170,6 +194,10 @@
               "target": "Package",
               "version": "[2.5.6, )"
             },
+            "SpreadsheetLight": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -186,6 +214,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -194,18 +240,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Shared\\ControWell.Shared.csproj": {
+    "C:\\AppPetra\\ControWell\\Shared\\ControWell.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Shared\\ControWell.Shared.csproj",
+        "projectUniqueName": "C:\\AppPetra\\ControWell\\Shared\\ControWell.Shared.csproj",
         "projectName": "ControWell.Shared",
-        "projectPath": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Shared\\ControWell.Shared.csproj",
+        "projectPath": "C:\\AppPetra\\ControWell\\Shared\\ControWell.Shared.csproj",
         "packagesPath": "C:\\Users\\Dagoberto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Shared\\obj\\",
+        "outputPath": "C:\\AppPetra\\ControWell\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dagoberto\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -244,12 +290,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
