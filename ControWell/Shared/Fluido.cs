@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace ControWell.Shared
 {
-    public class Comic
-    { 
+    public class Fluido
+    {
         public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-
+        public string Name { get; set; }=string.Empty;
     }
 }

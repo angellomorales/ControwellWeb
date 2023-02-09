@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "63of7ql8bipy4VHoQ23oxbOfkh+SXVS7N2RC7QxrIMfOstng6Wo0oihspXf9AKcl5fY6a+bNNBUshlJh0Chs/w==",
+  "dgSpecHash": "yfPGJBvOpdPYFAPpG+KyI2thgU2QHcbjvhaRvv7X3/rerChNE9Oh/BFRxNq6adu4AyF91oM6laRzHK9io5YaKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dagoberto\\source\\repos\\ControWell\\ControWell\\Shared\\ControWell.Shared.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\AppPetra\\ControWell\\Shared\\ControWell.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dagoberto\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\Dagoberto\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\Dagoberto\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.13\\microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512"
+  ],
   "logs": []
 }
