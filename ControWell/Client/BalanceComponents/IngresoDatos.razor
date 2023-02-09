@@ -1,0 +1,214 @@
+﻿@using ControWell.Client.Services.BalanceService;
+@using ControWell.Shared
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IBalanceService BalanceService
+@inject SweetAlertService Swal
+<div>
+    <div class="add-pozo-card-1">
+        <EditForm Model="miBalance" OnSubmit="EviarBalance">
+            <br />
+            <div class="row-align-title">
+              <h5>Registro de Datos</h5>
+            </div>
+            <br />
+            <div>
+                <div>
+                    <label for="nombre">Tanque⠀ ⠀⠀⠀⠀⠀⠀⠀⠀</label> @* no borrar el texto invisible*@
+                    <InputSelect @bind-Value=miBalance.TanqueId>
+                        @foreach (var i in Tanques)
+                        {
+                            <option value="@i.Id">@i.NombreTanque</option>
+                        }
+                    </InputSelect>
+                </div>
+                <div>
+                    <label for="nombre">Pozo⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</label> @* no borrar el texto invisible*@
+                    <InputSelect @bind-Value=miBalance.PozoId>
+                        @foreach (var j in Pozos)
+                        {
+                            <option value="@j.Id">@j.NombrePozo</option>
+                        }
+                    </InputSelect>
+                </div>
+                <div>
+                    <label for="nombre">Tipo de movimiento  ⠀</label> @* no borrar el texto invisible*@
+                    <InputSelect @bind-Value=miBalance.MovimientoId>
+                        @foreach (var k in Movimientos)
+                        {
+                            <option value="@k.Id">@k.NombreMovimiento</option>
+                        }
+                    </InputSelect>
+                </div>
+                <div>
+                    <label for="nombre">Nivel⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</label> @* no borrar el texto invisible*@
+                    <InputNumber @bind-Value=miBalance.Nivel></InputNumber>
+                </div>
+                <div>
+                    <label for="nombre">Interfase⠀⠀⠀ ⠀⠀⠀⠀⠀</label> @* no borrar el texto invisible*@
+                    <InputNumber @bind-Value=miBalance.Interfase></InputNumber>
+                </div>
+                <div class="row-align-components">
+                    <label for="nombre">°API@60⠀⠀⠀⠀⠀ ⠀⠀⠀</label> @* no borrar el texto invisible*@
+                    <InputNumber @bind-Value=miBalance.Api placeholder="Hour"></InputNumber>
+                    <Input value="⠀API obs"/>
+
+                </div>
+                <div class="row-align-components">
+                    <label for="nombre">S&W ⠀⠀⠀⠀⠀ ⠀⠀ ⠀⠀⠀</label> @* no borrar el texto invisible*@
+                    <InputNumber @bind-Value=miBalance.Syw></InputNumber>
+                    <p>%</p>
+                </div>
+                <div>
+                    <label for="nombre">T ambiente °F⠀ ⠀ ⠀⠀</label> @* no borrar el texto invisible*@
+                    <InputNumber @bind-Value=miBalance.TemAmbiente></InputNumber>
+                </div>
+                <div>
+                    <label for="nombre">T fluido °F ⠀⠀⠀⠀⠀⠀⠀</label @* no borrar el texto invisible*@
+                    <InputNumber @bind-Value=miBalance.TemFluido></InputNumber>
+                </div>
+            </div>
+            <br/>
+             <div class="button-group">
+                <p>⠀⠀⠀</p> @* no borrar el texto invisible*@
+               <button type="submit" class="btn btn-info">Calcular</button>
+                <p>⠀⠀⠀</p> @* no borrar el texto invisible*@
+               <button type="submit" class="btn btn-warning">Borrar último</button>
+                <p>⠀⠀⠀</p> @* no borrar el texto invisible*@
+            </div>
+            <br />
+        </EditForm>
+
+        
+    </div>
+</div>
+
+<style>
+
+ body{
+   font-family: Arial;
+  }
+
+  input {
+    border-radius: 5px;
+    background-color: #f7fafc;
+    width: 20%;
+    height: 20px;
+    border: 0.5px solid blue;
+    margin-right:8px;
+        /*border-style: inset;*/
+/*      border-width: 1px;
+*/
+     /* border-top-style: hidden;
+      border-right-style: solid;
+      border-bottom-style: hidden;
+      border-left-style: solid;*/
+
+  }
+/* estilos de la tabla */
+
+ 
+ /* estilos formulario agregar pozo*/
+
+ .add-pozo-card-1{
+      width: 315px;
+      height: auto;
+      display: block;
+      justify-content: center;
+      align-items: center;
+      background: rgba(223, 230, 233,1.0);
+      border-radius: 8px;
+      color: rgba(0, 0, 0,1.0);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.45);
+
+   }
+
+    .row-align {
+        display: flex;
+    }
+
+    .row-align-components {
+        display: flex;
+        align-items: initial
+    }
+
+        .row-align-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:100%;
+    }
+
+ .add-pozo-card-1 label {
+     margin-bottom: 5px;
+     margin-top: 6px;
+     margin-left:15px;
+     margin-right:20px;
+ }
+ .button-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+/*    background-color: lawngreen;*/ 
+ }
+
+
+</style>
+@code {
+    Boolean state = false;
+    Boolean update = false;
+    int id;
+    Boolean PozosState = false;
+    [Parameter]
+
+    public int? Id { get; set; }
+
+    Balance miBalance = new Balance();
+    public static List<Tanque> Tanques = new List<Tanque>();
+    public static List<Pozo> Pozos = new List<Pozo>();
+    public static List<TipoMovimiento> Movimientos = new List<TipoMovimiento>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var mitanque = await Http.GetFromJsonAsync<List<Tanque>>("api/Tanque");
+        if (mitanque != null)
+            Tanques = mitanque;
+        var mipozo = await Http.GetFromJsonAsync<List<Pozo>>("api/Pozo");
+        if (mipozo != null)
+            Pozos = mipozo;
+        var mimovimiento = await Http.GetFromJsonAsync<List<TipoMovimiento>>("api/TipoMovimiento");
+        if (mimovimiento != null)
+            Movimientos = mimovimiento;
+        PozosState = true;
+    }
+
+    async Task EviarBalance()
+    {
+        try
+        {
+            await BalanceService.CreateBalance(miBalance);
+            var resultado = await Swal.FireAsync(new SweetAlertOptions
+                {
+                    Title = "Success",
+                    Text = "Guardado correctamente",
+                    Icon = SweetAlertIcon.Success,
+                });
+        }
+        catch (InvalidCastException e)
+        {
+            Console.WriteLine(e);
+
+            state = false;
+            NavigationManager.NavigateTo("/");
+            NavigationManager.NavigateTo("/movimientos");
+        }
+        finally
+        {
+            state = false;
+            NavigationManager.NavigateTo("/");
+            NavigationManager.NavigateTo("/movimientos");
+        }
+    }
+}

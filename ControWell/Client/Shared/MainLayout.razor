@@ -1,7 +1,7 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="page">
-   @if(token == true){
+   @if(token == false){
         
       <div class="sidebar">
           <Menu />
@@ -27,7 +27,7 @@
 </style>
 
 @code{
-    private Boolean token = true;
+    private Boolean token = false;
 }
 
 
